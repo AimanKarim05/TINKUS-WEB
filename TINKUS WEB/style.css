@@ -1,0 +1,54 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #282c36;
+    color: #ffffff;
+}
+
+.container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#output {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-height: 50px;
+    background-color: #282c36;
+    color: white;
+    border-radius: 5px;
+}
+
+#startBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #a4e575;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#startBtn:hover {
+    background-color: #4fa3d1;
+}
+
+#pingPongCanvas {
+    display: none;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #282c36;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
