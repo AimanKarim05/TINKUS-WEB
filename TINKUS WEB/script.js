@@ -156,8 +156,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function gameOver() {
         isGameOver = true;
         pingPongCanvas.style.display = 'none'; // Hide the canvas
-        outputDiv.innerHTML += "<p>Tinkus: Game over!</p>";
-        speak('Game over!');
+        outputDiv.innerHTML += "<p>Tinkus: Game over, I win!</p>";
+        speak('Game over, I win!');
     }
 
     function draw() {
