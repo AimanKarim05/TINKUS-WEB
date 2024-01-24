@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function handleUserInput(input) {
         let response;
 
-        if (input.includes('let\'s play ping pong')) {
+        if (input.includes('ping pong')) {
             response = 'Sure, let\'s play ping pong!';
             isPlayingPingPong = true;
             isGameOver = false;
@@ -56,13 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
             initializePingPong();
             startPingPong();
         } else if (input.includes('hello')) {
-            response = 'Hi there! How can I help you?';
-
-        } else if (input.includes('how are you')) {
-            response = "I don't have feelings, but thanks for asking!";
-
-        } else if (input.includes('what is your name')) {
-            response = 'I am Tinkus, your virtual assistant.';
+            response = 'Hello, I am Tinkus, your virtual assistant, here to assist you with tasks, answer questions, and even engage in fun minigames like ping pong.';
 
         } else if (input.includes('how old are you')) {
             response = 'I was born in July 24th, 2023 but upgraded into the world of webs in December 20th, 2023.';
@@ -71,11 +65,20 @@ document.addEventListener('DOMContentLoaded', function () {
             response = 'Goodbye! Have a great day!';
 
         } else {
-            response = 'I did not understand that. Can you please repeat?';
+            // Query Google for other user inputs
+            queryGoogle(input);
+            return; // Don't proceed to output and speak for general queries
         }
 
         outputDiv.innerHTML += `<p>Tinkus: ${response}</p>`;
         speak(response);
+    }
+
+    function queryGoogle(query) {
+        // Use a simple approach to open a new tab with a Google search
+        const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        window.open(googleSearchURL, '_blank');
+        speak('Here is what I found on Google based on your request.');
     }
 
     function handlePingPongInput(input) {
